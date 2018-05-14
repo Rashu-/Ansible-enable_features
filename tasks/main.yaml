@@ -3,7 +3,7 @@
 - name: Check network device OS
   assert:
     that: >
-      ansible_os_family == 'nxos'
+      ansible_network_os == 'nxos'
 
 - name: Enable features
   nxos_feature:
