@@ -8,8 +8,9 @@
 
 - name: Enable features
   nxos_feature:
-    feature: "{{ device_features }}"
+    feature: "{{ item }}"
     state: enabled
+  with_items: "{{ device_features }}"
   when: >
     ansible_os_family == 'nxos'
   tags: 
