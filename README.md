@@ -5,6 +5,9 @@ The configuration of the role is done in such way that it should not be necessar
 
 Please report any issues or send PR.
 
+## Role variables
+The role only needs a list of features to be enabled
+
 ## OS supported 
 Cisco NXOS
 
