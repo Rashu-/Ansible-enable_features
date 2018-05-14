@@ -11,6 +11,6 @@
     state: enabled
   with_items: "{{ device_features }}"
   when: >
-    ansible_os_family == 'nxos'
+    ansible_network_os == 'nxos'
   tags: 
     - enable_features
