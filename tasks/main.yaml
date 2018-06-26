@@ -9,9 +9,11 @@
 - name: Enable features
   nxos_feature:
     feature: "{{ item }}"
-    state: enabled
-  with_items: "{{ device_features }}"
+    state: "{{ item.state | default(omit) }}"
+  loop: "{{ device_features }}"
   when: >
-    ansible_network_os == 'nxos'
+    ansible_network_os == 'nxos' and
+    device_features is defined
   tags: 
     - enable_features
+    - nxos
