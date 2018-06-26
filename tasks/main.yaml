@@ -8,7 +8,7 @@
 
 - name: Enable features
   nxos_feature:
-    feature: "{{ item }}"
+    feature: "{{ item.name }}"
     state: "{{ item.state | default(omit) }}"
   loop: "{{ device_features }}"
   when: >
